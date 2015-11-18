@@ -1,0 +1,546 @@
+
+<!DOCTYPE html>
+<html lang="null">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="陈启超的博客">
+    <title>007 - 快到极致的Android模拟器 - 陈启超的博客</title>
+    <meta name="author" content="陈启超">
+    
+        <link rel="icon" href="/assets/images/android.ico">
+    
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="这一讲主要是介绍最快的Android模拟器Genymotion的下载和安装，被自带的模拟器折磨的不行的同学们赶紧点击观看视频吧~">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="007 - 快到极致的Android模拟器">
+<meta property="og:url" content="http://chenqichao.me/2014/03/12/015-Android-Tutorial-007/index.html">
+<meta property="og:site_name" content="陈启超的博客">
+<meta property="og:description" content="这一讲主要是介绍最快的Android模拟器Genymotion的下载和安装，被自带的模拟器折磨的不行的同学们赶紧点击观看视频吧~">
+<meta property="og:image" content="http://tutorchen.qiniudn.com/virtual_device_home.jpg">
+<meta property="og:updated_time" content="2015-11-18T15:30:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="007 - 快到极致的Android模拟器">
+<meta name="twitter:description" content="这一讲主要是介绍最快的Android模拟器Genymotion的下载和安装，被自带的模拟器折磨的不行的同学们赶紧点击观看视频吧~">
+    
+    
+    
+        <meta property="og:image" content="/assets/images/http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+    
+    
+        <meta property="og:image" content="/2014/03/12/015-Android-Tutorial-007/http://7mnllc.com1.z0.glb.clouddn.com/Android_Tutorial_Logo"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://chenqichao.me/2014/03/12/015-Android-Tutorial-007/http://7mnllc.com1.z0.glb.clouddn.com/Android_Tutorial_Logo" />
+    
+    
+        <meta property="og:image" content="/2014/03/12/015-Android-Tutorial-007/http://7mnllc.com1.z0.glb.clouddn.com/android-nombres-postres.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://chenqichao.me/2014/03/12/015-Android-Tutorial-007/http://7mnllc.com1.z0.glb.clouddn.com/android-nombres-postres.jpg" />
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css" type="text/css">
+    <!--STYLES END-->
+    
+    
+<script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?cff60daff4add965b50f83b38df090d3";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">陈启超的博客</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="/#about">
+        
+        
+            <img class="header-picture" src="http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+            </a>
+            <span class="sidebar-profile-name">陈启超</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">首页</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">标签</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">搜索</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">关于</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="http://weibo.com/chenqichao2016" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-weibo"></i>
+                    <span class="sidebar-button-desc">微博</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/qichaochen" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="mailto:2009chenqc@163.com" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
+                    <span class="sidebar-button-desc">邮箱</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+        <div class="post-header-cover
+                    text-center
+                    "
+             style="background-image:url('http://7mnllc.com1.z0.glb.clouddn.com/android-nombres-postres.jpg');"
+             data-behavior="3">
+            
+        </div>
+
+            <div id="main" data-behavior="3"
+                 class="hasCover
+                        hasCoverMetaOut
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+    <div class="post-header main-content-wrap text-center">
+    
+        <h1 class="post-title" itemprop="headline">
+            007 - 快到极致的Android模拟器
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Wed Mar 12 2014 00:00:00 GMT+0800">
+	
+		    Mar 12, 2014
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/马上学Android/">马上学Android</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>这一讲主要是介绍最快的Android模拟器Genymotion的下载和安装，被自带的模拟器折磨的不行的同学们赶紧点击观看视频吧~</p>
+<a id="more"></a>
+<ul>
+<li>马上学Android 007 - 快到极致的Android模拟器</li>
+</ul>
+<embed src="http://player.youku.com/player.php/sid/XNjkwMTg3NTI0/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+
+<p>####概述<br>Genymotion是一套完整的工具，它提供了Android虚拟环境。它简直就是开发者、测试人员、推销者甚至是游戏玩家的福音。</p>
+<p>Genymotion支持Windows、Linux和Mac OS等操作系统，容易安装和使用：按简单的安装过程，选择一款Android虚拟设备，开启后就体验Genymotion带来的快感吧。</p>
+<p><a href="https://www.genymotion.com" target="_blank" rel="external">Genymotion官方网站</a><br><a href="https://www.genymotion.cn" target="_blank" rel="external">Genymotion中文网站</a></p>
+<p>####特性</p>
+<p>#####最好的Android模拟体验</p>
+<ul>
+<li>支持OpenGL加速，提供最好的3D性能体验</li>
+<li>可以从Google Play安装应用</li>
+<li>支持全屏并改善了使用感受</li>
+</ul>
+<p>#####全控制</p>
+<ul>
+<li>可同时启动多个模拟器</li>
+<li>支持传感器管理，如电池状态、GPS、Accelerator加速器</li>
+<li>支持Shell控制模拟器</li>
+<li>完全兼容ADB，您可以从主机控制您的模拟器</li>
+</ul>
+<p>#####管理设备</p>
+<ul>
+<li>易安装</li>
+<li>兼容Microsoft Windows 32/64 bits, Mac OSX 10.5+ and Linux 32/64 bits</li>
+<li>可以配置模拟器参数，如屏幕分辨率、内存大小、CPU数量</li>
+<li>轻松下载、部署最新的Genymotion虚拟设备。</li>
+<li>从Eclipse启动虚拟设备</li>
+<li>使用Genymotion测试您的应用</li>
+</ul>
+<p>####环境要求</p>
+<p>#####操作系统要求<br>需要满足以下操作系统之一</p>
+<ul>
+<li>Microsoft Windows XP SP3 (32 or 64 bits)</li>
+<li>Microsoft Windows Vista (32 or 64 bits)</li>
+<li>Microsoft Windows 7 (32 or 64 bits)</li>
+<li>Linux Ubuntu 12.04</li>
+<li>Linux Ubuntu 12.10</li>
+<li>Mac OS X 10.X</li>
+</ul>
+<p>#####系统环境要求</p>
+<ul>
+<li>支持OpenGL 2.0</li>
+<li>CPU支持VT-x或者AMD-V虚拟化，通过BIOS设置开启</li>
+<li>至少512MB内存</li>
+<li>至少提供100MB的硬盘空间供Genymotion安装，至少2GB硬盘空间用来部署Genymotion虚拟设备。有些可能需要8G以上，这主要取决于您安装在虚拟机里的应用程序。</li>
+<li>可用网络连接（用于安装和更新）</li>
+<li>系统显示分辨率不低于1024x768</li>
+</ul>
+<p>#####应用程序要求<br>Oracle VirtualBox &gt;= 4.1（版本越高越好）</p>
+<p>####安装</p>
+<p>#####注册</p>
+<p>#####下载并安装Oracle VirtualBox<br>如果您的电脑上还没有安装VirtualBox，那请按照下面的步骤下载安装</p>
+<ul>
+<li>Windows用户<br>安装VirtualBox最简单的方式就是下载包含VirtualBox的Genymotion包，点击下载</li>
+<li>MacOS X用户<br>打开VirtualBox下载页面，然后下载MacOS X的dmg文件，打开dmg文件然后按步骤安装。完成后记得重启。</li>
+<li>Linux用户<br>检查资料库：大多数GNU/Linux都会自带VirtualBox安装包。如果没有或者您想要其他版本，那么打开VirtualBox下载页面</li>
+</ul>
+<p>#####安装Genymotion<br>根据您的系统，安装有所不同：</p>
+<ul>
+<li>Windows<br>  1.双击安装文件<br>  2.选择安装语言并点击下一步[Next]<br>  3.再次点击下一步[Next]<br>  4.如果需要，可更改安装路径，点击浏览[Browse..]（默认路径是C:\Program Files\Genymobile\Genymotion），然后点击下一步[Next]<br>  5.选择是否创建快捷菜单[Don’t create a Start Menu folder]再次点击下一步[Next]<br>  6.选择是否创建桌面快捷方式[Create a desktop icon]，然后点击下一步[Next]<br>  7.点击安装[Install]按钮<br>  8.点击完成[Finish]按钮</li>
+<li>MacOS X<br>  1.打开dmg安装文件<br>  2.移动Genymotion和Genymotion shell到应用程序目录</li>
+<li>Linux<br>  没在Linux配置过，需要的自行Google一下</li>
+</ul>
+<p>####快速开始</p>
+<ol>
+<li>启动Genymotion</li>
+<li>创建一个新的设备（需要验证用户名和密码）</li>
+<li>加载成功可以在云端列表选择所需的设备进行下载</li>
+<li>安装完毕启动模拟器（体验神速的模拟器）<br><img src="http://tutorchen.qiniudn.com/virtual_device_home.jpg" alt="Genymotion"></li>
+</ol>
+<p>####插件安装</p>
+<ul>
+<li>Eclipse插件</li>
+<li>Android Studio插件</li>
+</ul>
+
+            
+            
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        <div class="post-footer-tags">
+            <span class="text-color-light text-small">标签</span><br/>
+            
+    <a class="tag tag--primary tag--small t-link" href="/tags/马上学Android/">马上学Android</a>
+
+        </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/03/12/016-Android-Tutorial-008/"
+                   data-tooltip="008 - ImageView控件的简单使用">
+                    
+                        <i class="fa fa-angle-left"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/03/11/014-Android-Tutorial-006/"
+                   data-tooltip="006 - Edit的简单使用及布局的排版">
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至新浪微博"
+               href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=2071225&amp;url=http://chenqichao.me/2014/03/12/015-Android-Tutorial-007/&amp;title=007 - 快到极致的Android模拟器">
+                <i class="fa fa-weibo"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-015-Android-Tutorial-007" data-title="007 - 快到极致的Android模拟器" data-url="http://chenqichao.me/2014/03/12/015-Android-Tutorial-007/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:'tutorchen'};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</section>
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 陈启超. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/03/12/016-Android-Tutorial-008/"
+                   data-tooltip="008 - ImageView控件的简单使用">
+                    
+                        <i class="fa fa-angle-left"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/03/11/014-Android-Tutorial-006/"
+                   data-tooltip="006 - Edit的简单使用及布局的排版">
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至新浪微博"
+               href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=2071225&amp;url=http://chenqichao.me/2014/03/12/015-Android-Tutorial-007/&amp;title=007 - 快到极致的Android模拟器">
+                <i class="fa fa-weibo"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://chenqichao.me/2014/03/12/015-Android-Tutorial-007/">
+                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://chenqichao.me/2014/03/12/015-Android-Tutorial-007/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://chenqichao.me/2014/03/12/015-Android-Tutorial-007/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <!-- Define author's picture -->
+
+
+
+
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+        <img id="about-card-picture" src="http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+        
+        <h4 id="about-card-name">陈启超</h4>
+        
+        <h5 id="about-card-bio"><p>Android研发工程师@美团</p>
+</h5>
+
+        <p id="about-card-bio"><p>你为什么而活着?</p>
+</p>
+        
+        
+        <h5 id="about-card-job">
+            <i class="fa fa-briefcase"></i>
+            <br/>
+            <p>研发工程师|程序猿</p>
+
+        </h5>
+        
+        
+        <h5 id="about-card-location">
+            <i class="fa fa-map-marker"></i>
+            <br/>
+            中国·厦门
+        </h5>
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('http://7mnllc.com1.z0.glb.clouddn.com/bg.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/jquery.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.fancybox.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
+<script src="/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>

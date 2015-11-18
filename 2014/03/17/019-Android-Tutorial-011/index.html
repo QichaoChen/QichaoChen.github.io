@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+<html lang="null">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="陈启超的博客">
+    <title>[马上学Android] 011 - 使用Intent来启动另外一个Activity - 陈启超的博客</title>
+    <meta name="author" content="陈启超">
+    
+        <link rel="icon" href="/assets/images/android.ico">
+    
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="Intent的初步使用学习">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="[马上学Android] 011 - 使用Intent来启动另外一个Activity">
+<meta property="og:url" content="http://chenqichao.me/2014/03/17/019-Android-Tutorial-011/index.html">
+<meta property="og:site_name" content="陈启超的博客">
+<meta property="og:description" content="Intent的初步使用学习">
+<meta property="og:updated_time" content="2015-11-18T15:30:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[马上学Android] 011 - 使用Intent来启动另外一个Activity">
+<meta name="twitter:description" content="Intent的初步使用学习">
+    
+    
+    
+        <meta property="og:image" content="/assets/images/http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+    
+    
+        <meta property="og:image" content="/2014/03/17/019-Android-Tutorial-011/http://7mnllc.com1.z0.glb.clouddn.com/Android_Tutorial_Logo"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://chenqichao.me/2014/03/17/019-Android-Tutorial-011/http://7mnllc.com1.z0.glb.clouddn.com/Android_Tutorial_Logo" />
+    
+    
+        <meta property="og:image" content="/2014/03/17/019-Android-Tutorial-011/http://7mnllc.com1.z0.glb.clouddn.com/android-nombres-postres.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://chenqichao.me/2014/03/17/019-Android-Tutorial-011/http://7mnllc.com1.z0.glb.clouddn.com/android-nombres-postres.jpg" />
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css" type="text/css">
+    <!--STYLES END-->
+    
+    
+<script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?cff60daff4add965b50f83b38df090d3";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">陈启超的博客</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="/#about">
+        
+        
+            <img class="header-picture" src="http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+            </a>
+            <span class="sidebar-profile-name">陈启超</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">首页</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">标签</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">搜索</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">关于</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="http://weibo.com/chenqichao2016" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-weibo"></i>
+                    <span class="sidebar-button-desc">微博</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/qichaochen" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="mailto:2009chenqc@163.com" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
+                    <span class="sidebar-button-desc">邮箱</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+        <div class="post-header-cover
+                    text-center
+                    "
+             style="background-image:url('http://7mnllc.com1.z0.glb.clouddn.com/android-nombres-postres.jpg');"
+             data-behavior="3">
+            
+        </div>
+
+            <div id="main" data-behavior="3"
+                 class="hasCover
+                        hasCoverMetaOut
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+    <div class="post-header main-content-wrap text-center">
+    
+        <h1 class="post-title" itemprop="headline">
+            [马上学Android] 011 - 使用Intent来启动另外一个Activity
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Mon Mar 17 2014 00:00:00 GMT+0800">
+	
+		    Mar 17, 2014
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/马上学Android/">马上学Android</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>Intent的初步使用学习</p>
+<a id="more"></a>
+<p>在新建了一个Activity而且绑定了布局文件之后，如果跳转到这个Activity界面呢？在Android里面有很多机制可以实现界面的跳转，那么今天视频介绍的是使用Intent来进行跳转</p>
+<ul>
+<li>马上学Android 011 - 使用Intent来启动另外一个Activity</li>
+</ul>
+<embed src="http://player.youku.com/player.php/sid/XNjkwMTgyNDg0/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+
+<p>新建了一个Activity如果要在Android里面进行显示使用的话，必须要在AndroidManifest.xml进行相应的注册声明，否则跳转之后系统会找不到相应的布局文件导致程序崩溃！千万记得~那么如何注册呢，如果你是通过Android Studio直接创建一个Activity，那么Android Studio已经你注册声明好了，如果你是自己创建一个类去继承Activity并自己绑定布局文件，那么你需要在AndroidManifest.xml的Application节点下注册声明示例如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">application</span></span><br><span class="line">    <span class="attribute">android:allowBackup</span>=<span class="value">"true"</span></span><br><span class="line">    <span class="attribute">android:icon</span>=<span class="value">"@drawable/ic_launcher"</span></span><br><span class="line">    <span class="attribute">android:label</span>=<span class="value">"@string/app_name"</span></span><br><span class="line">    <span class="attribute">android:theme</span>=<span class="value">"@style/AppTheme"</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">activity</span></span><br><span class="line">        <span class="attribute">android:name</span>=<span class="value">"com.chen.activity.MainActivity"</span></span><br><span class="line">        <span class="attribute">android:label</span>=<span class="value">"@string/app_name"</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">intent-filter</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">action</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.action.MAIN"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="title">category</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.category.LAUNCHER"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">intent-filter</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="title">activity</span>&gt;</span></span><br><span class="line">     </span><br><span class="line">     <span class="tag">&lt;<span class="title">activity</span> <span class="attribute">android:name</span>=<span class="value">"com.XXX.activity.SecondActivity"</span> &gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="title">activity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">application</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>application下的第一个Activity节点（MainActivity）为应用启动Activity的注册信息，第二个Activity节点（SecondActivity）为自定义的节点，至少需要给出属性name的值，可以使用类似文件的绝对包路径，也可以使用相对包路径。</p>
+<p>为了初学方便，可以在主界面添加一个Button按钮，点击后切换到第二个Activity，具体按钮响应代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">btnSwitch.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//跳转到第二个Activity</span></span><br><span class="line">        Intent intent = <span class="keyword">new</span> Intent(MainActivity.<span class="keyword">this</span>,SecondActivity.class);</span><br><span class="line">        startActivity(intent);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>创建一个Intent对象，在构造函数里面传入起始Activity<code>MainActivity.this</code>和将要跳转到得Activity <code>SecondActivity.class</code></p>
+<p>然后调用<code>startActivity(intent)</code>切换到第二个SecondActivity，这是一种比较简单的Activity切换方式。</p>
+<p>切换一个新的Activity内容就是这么简单，试试看吧~</p>
+
+            
+            
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        <div class="post-footer-tags">
+            <span class="text-color-light text-small">标签</span><br/>
+            
+    <a class="tag tag--primary tag--small t-link" href="/tags/马上学Android/">马上学Android</a>
+
+        </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/03/18/020-Android-Tutorial-012/"
+                   data-tooltip="012 - RatingBar和SeekBar的简单使用">
+                    
+                        <i class="fa fa-angle-left"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/03/14/018-Android-Tutorial-010/"
+                   data-tooltip="010 - 新建一个Activity并绑定布局文件">
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至新浪微博"
+               href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=2071225&amp;url=http://chenqichao.me/2014/03/17/019-Android-Tutorial-011/&amp;title=[马上学Android] 011 - 使用Intent来启动另外一个Activity">
+                <i class="fa fa-weibo"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-019-Android-Tutorial-011" data-title="[马上学Android] 011 - 使用Intent来启动另外一个Activity" data-url="http://chenqichao.me/2014/03/17/019-Android-Tutorial-011/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:'tutorchen'};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</section>
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 陈启超. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/03/18/020-Android-Tutorial-012/"
+                   data-tooltip="012 - RatingBar和SeekBar的简单使用">
+                    
+                        <i class="fa fa-angle-left"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/03/14/018-Android-Tutorial-010/"
+                   data-tooltip="010 - 新建一个Activity并绑定布局文件">
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至新浪微博"
+               href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=2071225&amp;url=http://chenqichao.me/2014/03/17/019-Android-Tutorial-011/&amp;title=[马上学Android] 011 - 使用Intent来启动另外一个Activity">
+                <i class="fa fa-weibo"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://chenqichao.me/2014/03/17/019-Android-Tutorial-011/">
+                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://chenqichao.me/2014/03/17/019-Android-Tutorial-011/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://chenqichao.me/2014/03/17/019-Android-Tutorial-011/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <!-- Define author's picture -->
+
+
+
+
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+        <img id="about-card-picture" src="http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+        
+        <h4 id="about-card-name">陈启超</h4>
+        
+        <h5 id="about-card-bio"><p>Android研发工程师@美团</p>
+</h5>
+
+        <p id="about-card-bio"><p>你为什么而活着?</p>
+</p>
+        
+        
+        <h5 id="about-card-job">
+            <i class="fa fa-briefcase"></i>
+            <br/>
+            <p>研发工程师|程序猿</p>
+
+        </h5>
+        
+        
+        <h5 id="about-card-location">
+            <i class="fa fa-map-marker"></i>
+            <br/>
+            中国·厦门
+        </h5>
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('http://7mnllc.com1.z0.glb.clouddn.com/bg.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/jquery.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.fancybox.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
+<script src="/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>

@@ -1,0 +1,477 @@
+
+<!DOCTYPE html>
+<html lang="null">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="陈启超的博客">
+    <title>038 - Android 主菜单、子菜单和上下文菜单的创建和使用 - 陈启超的博客</title>
+    <meta name="author" content="陈启超">
+    
+        <link rel="icon" href="/assets/images/android.ico">
+    
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="Android菜单">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="038 - Android 主菜单、子菜单和上下文菜单的创建和使用">
+<meta property="og:url" content="http://chenqichao.me/2014/05/20/046-Android-Tutorial-038/index.html">
+<meta property="og:site_name" content="陈启超的博客">
+<meta property="og:description" content="Android菜单">
+<meta property="og:updated_time" content="2015-11-18T15:41:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="038 - Android 主菜单、子菜单和上下文菜单的创建和使用">
+<meta name="twitter:description" content="Android菜单">
+    
+    
+    
+        <meta property="og:image" content="/assets/images/http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+    
+    
+        <meta property="og:image" content="/2014/05/20/046-Android-Tutorial-038/http://7mnllc.com1.z0.glb.clouddn.com/Android_Tutorial_Logo"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://chenqichao.me/2014/05/20/046-Android-Tutorial-038/http://7mnllc.com1.z0.glb.clouddn.com/Android_Tutorial_Logo" />
+    
+    
+        <meta property="og:image" content="/2014/05/20/046-Android-Tutorial-038/http://7mnllc.com1.z0.glb.clouddn.com/android-nombres-postres.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://chenqichao.me/2014/05/20/046-Android-Tutorial-038/http://7mnllc.com1.z0.glb.clouddn.com/android-nombres-postres.jpg" />
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css" type="text/css">
+    <!--STYLES END-->
+    
+    
+<script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?cff60daff4add965b50f83b38df090d3";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">陈启超的博客</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="/#about">
+        
+        
+            <img class="header-picture" src="http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+            </a>
+            <span class="sidebar-profile-name">陈启超</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">首页</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">标签</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">搜索</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">关于</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="http://weibo.com/chenqichao2016" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-weibo"></i>
+                    <span class="sidebar-button-desc">微博</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/qichaochen" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="mailto:2009chenqc@163.com" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
+                    <span class="sidebar-button-desc">邮箱</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+        <div class="post-header-cover
+                    text-center
+                    "
+             style="background-image:url('http://7mnllc.com1.z0.glb.clouddn.com/android-nombres-postres.jpg');"
+             data-behavior="3">
+            
+        </div>
+
+            <div id="main" data-behavior="3"
+                 class="hasCover
+                        hasCoverMetaOut
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+    <div class="post-header main-content-wrap text-center">
+    
+        <h1 class="post-title" itemprop="headline">
+            038 - Android 主菜单、子菜单和上下文菜单的创建和使用
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Tue May 20 2014 00:00:00 GMT+0800">
+	
+		    May 20, 2014
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/马上学Android/">马上学Android</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>Android菜单</p>
+<a id="more"></a>
+<p>菜单的使用对于一个Android应用程序是不可缺少的，那么应用程序中如何来使用Android的菜单呢，当然Google官方还是建议布局和代码分开的模式，这样便于管理代码。</p>
+<ul>
+<li>马上学Android 038 - Android 主菜单、子菜单和上下文菜单的创建和使用</li>
+</ul>
+<embed src="http://player.youku.com/player.php/sid/XNzE0NjIzMjI0/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+
+<p>下面给出Android菜单的内容信息，详细可以参考<a href="http://developer.android.com/guide/topics/ui/menus.html#xml" target="_blank" rel="external">Android官方文档</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">一、Android菜单类型（官方建议通过xml来创建而非通过代码来创建）</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span>选项菜单（主菜单）</span><br><span class="line"></span><br><span class="line">    Android <span class="number">3.0</span>开始之初ActionBar导致菜单风格和<span class="number">3.0</span>以前的版本不一致，但是代码兼容性原因，所以创建方式和以前基本一致。</span><br><span class="line">    xml节点：&lt;menu&gt;、&lt;item&gt;、&lt;group&gt;</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>子菜单</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>上下文菜单</span><br><span class="line">    </span><br><span class="line">    上下文菜单可以和任何View进行关联，默认是长按呼出上下文菜单</span><br><span class="line">    使用：</span><br><span class="line">    * registerForContextMenu() - 注册上下文菜单</span><br><span class="line">    * unregisterForContextMenu - 取消注册上下文菜单</span><br><span class="line"></span><br><span class="line">二、响应菜单点击事件方法：</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span>实现onMenuItemClickListener接口，重新onMenuItemClick方法</span><br><span class="line"><span class="number">2.</span>重新onMenuItemSelected()</span><br><span class="line"><span class="number">3.</span>对于选项菜单可以重写onOptionItemSelected方法</span><br><span class="line">  对于上下文菜单可以重写onContextItemSelected方法</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">三、问题</span><br><span class="line"><span class="number">1.</span>同时实现三种方法，它们的执行顺序是如何的？</span><br><span class="line"><span class="number">2.</span>如何动态添加菜单项</span><br></pre></td></tr></table></figure>
+<p>详细的创建步骤和流程请查看视频！</p>
+
+            
+            
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        <div class="post-footer-tags">
+            <span class="text-color-light text-small">标签</span><br/>
+            
+    <a class="tag tag--primary tag--small t-link" href="/tags/马上学Android/">马上学Android</a>
+
+        </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/09/01/047-Android-Studio-2014-IO-Session/"
+                   data-tooltip="Android Studio开发工具的新特性">
+                    
+                        <i class="fa fa-angle-left"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/05/19/045-Android-Tutorial-037/"
+                   data-tooltip="037 - Android Service入门到精通06 - 远程服务和前台服务">
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至新浪微博"
+               href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=2071225&amp;url=http://chenqichao.me/2014/05/20/046-Android-Tutorial-038/&amp;title=038 - Android 主菜单、子菜单和上下文菜单的创建和使用">
+                <i class="fa fa-weibo"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-046-Android-Tutorial-038" data-title="038 - Android 主菜单、子菜单和上下文菜单的创建和使用" data-url="http://chenqichao.me/2014/05/20/046-Android-Tutorial-038/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:'tutorchen'};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</section>
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 陈启超. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/09/01/047-Android-Studio-2014-IO-Session/"
+                   data-tooltip="Android Studio开发工具的新特性">
+                    
+                        <i class="fa fa-angle-left"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/05/19/045-Android-Tutorial-037/"
+                   data-tooltip="037 - Android Service入门到精通06 - 远程服务和前台服务">
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至新浪微博"
+               href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=2071225&amp;url=http://chenqichao.me/2014/05/20/046-Android-Tutorial-038/&amp;title=038 - Android 主菜单、子菜单和上下文菜单的创建和使用">
+                <i class="fa fa-weibo"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://chenqichao.me/2014/05/20/046-Android-Tutorial-038/">
+                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://chenqichao.me/2014/05/20/046-Android-Tutorial-038/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://chenqichao.me/2014/05/20/046-Android-Tutorial-038/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <!-- Define author's picture -->
+
+
+
+
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+        <img id="about-card-picture" src="http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+        
+        <h4 id="about-card-name">陈启超</h4>
+        
+        <h5 id="about-card-bio"><p>Android研发工程师@美团</p>
+</h5>
+
+        <p id="about-card-bio"><p>你为什么而活着?</p>
+</p>
+        
+        
+        <h5 id="about-card-job">
+            <i class="fa fa-briefcase"></i>
+            <br/>
+            <p>研发工程师|程序猿</p>
+
+        </h5>
+        
+        
+        <h5 id="about-card-location">
+            <i class="fa fa-map-marker"></i>
+            <br/>
+            中国·厦门
+        </h5>
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('http://7mnllc.com1.z0.glb.clouddn.com/bg.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/jquery.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.fancybox.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
+<script src="/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>

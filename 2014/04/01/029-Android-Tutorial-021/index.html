@@ -1,0 +1,602 @@
+
+<!DOCTYPE html>
+<html lang="null">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="陈启超的博客">
+    <title>021 - Android Studio的使用教程02 - 陈启超的博客</title>
+    <meta name="author" content="陈启超">
+    
+        <link rel="icon" href="/assets/images/android.ico">
+    
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="本次视频继续介绍Android Studio的使用，主要是关于Android Studio的配置和一些使用技巧">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="021 - Android Studio的使用教程02">
+<meta property="og:url" content="http://chenqichao.me/2014/04/01/029-Android-Tutorial-021/index.html">
+<meta property="og:site_name" content="陈启超的博客">
+<meta property="og:description" content="本次视频继续介绍Android Studio的使用，主要是关于Android Studio的配置和一些使用技巧">
+<meta property="og:updated_time" content="2015-11-18T15:30:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="021 - Android Studio的使用教程02">
+<meta name="twitter:description" content="本次视频继续介绍Android Studio的使用，主要是关于Android Studio的配置和一些使用技巧">
+    
+    
+    
+        <meta property="og:image" content="/assets/images/http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+    
+    
+        <meta property="og:image" content="/2014/04/01/029-Android-Tutorial-021/http://7mnllc.com1.z0.glb.clouddn.com/Android_Tutorial_Logo"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://chenqichao.me/2014/04/01/029-Android-Tutorial-021/http://7mnllc.com1.z0.glb.clouddn.com/Android_Tutorial_Logo" />
+    
+    
+        <meta property="og:image" content="/2014/04/01/029-Android-Tutorial-021/http://7mnllc.com1.z0.glb.clouddn.com/android-nombres-postres.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://chenqichao.me/2014/04/01/029-Android-Tutorial-021/http://7mnllc.com1.z0.glb.clouddn.com/android-nombres-postres.jpg" />
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css" type="text/css">
+    <!--STYLES END-->
+    
+    
+<script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?cff60daff4add965b50f83b38df090d3";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">陈启超的博客</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="/#about">
+        
+        
+            <img class="header-picture" src="http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+            </a>
+            <span class="sidebar-profile-name">陈启超</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">首页</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">标签</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">搜索</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">关于</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="http://weibo.com/chenqichao2016" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-weibo"></i>
+                    <span class="sidebar-button-desc">微博</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/qichaochen" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="mailto:2009chenqc@163.com" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
+                    <span class="sidebar-button-desc">邮箱</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+        <div class="post-header-cover
+                    text-center
+                    "
+             style="background-image:url('http://7mnllc.com1.z0.glb.clouddn.com/android-nombres-postres.jpg');"
+             data-behavior="3">
+            
+        </div>
+
+            <div id="main" data-behavior="3"
+                 class="hasCover
+                        hasCoverMetaOut
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+    <div class="post-header main-content-wrap text-center">
+    
+        <h1 class="post-title" itemprop="headline">
+            021 - Android Studio的使用教程02
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Tue Apr 01 2014 00:00:00 GMT+0800">
+	
+		    Apr 01, 2014
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/马上学Android/">马上学Android</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>本次视频继续介绍Android Studio的使用，主要是关于Android Studio的配置和一些使用技巧</p>
+<a id="more"></a>
+<ul>
+<li>马上学Android 021 - Android Studio的使用教程02</li>
+</ul>
+<embed src="http://player.youku.com/player.php/sid/XNzE0Nzc0MzI0/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+
+<p>使用快捷键的效率远大于使用鼠标的效率，所以写代码的过程中尽量有意识的使用快捷键！</p>
+<p>1.常见问题</p>
+<table>
+<thead>
+<tr>
+<th>常见问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.中文乱码问题</td>
+</tr>
+<tr>
+<td>2.如何完美显示中文</td>
+</tr>
+<tr>
+<td>3.如何不让光标随意定位</td>
+</tr>
+<tr>
+<td>4.如何显示行号</td>
+</tr>
+<tr>
+<td>5.如何启动不自动打开工程</td>
+</tr>
+<tr>
+<td>6.默认代码提示和自动补全与输入法快捷键冲突</td>
+</tr>
+<tr>
+<td>7.去除自动补全的大小写敏感</td>
+</tr>
+<tr>
+<td>8.如何保存文件</td>
+</tr>
+<tr>
+<td>9.导入和导出自定义设置</td>
+</tr>
+</tbody>
+</table>
+<p>2.Android Studio常用快捷键</p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alt + Enter</td>
+<td>导入包</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + L</td>
+<td>格式化代码</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + O</td>
+<td>优化导入的包和类</td>
+</tr>
+<tr>
+<td>Alt + Insert</td>
+<td>插入代码（如get/set方法）</td>
+</tr>
+<tr>
+<td>Ctrl + E 或者 Alt + Shift + C</td>
+<td>查看最近更改的代码</td>
+</tr>
+<tr>
+<td>Ctrl + F</td>
+<td>查找文本</td>
+</tr>
+<tr>
+<td>Ctri + Shift + Space</td>
+<td>自动补全代码</td>
+</tr>
+<tr>
+<td>Ctrl + Space</td>
+<td>代码提示</td>
+</tr>
+<tr>
+<td>Ctrl + P</td>
+<td>方法参数提示</td>
+</tr>
+<tr>
+<td>Ctrl + X</td>
+<td>剪切单行</td>
+</tr>
+<tr>
+<td>Ctrl + D</td>
+<td>复制选中</td>
+</tr>
+<tr>
+<td>Ctrl + /或者Ctrl + Shift + /</td>
+<td>添加注释</td>
+</tr>
+<tr>
+<td>Ctrl + J</td>
+<td>自动代码</td>
+</tr>
+<tr>
+<td>Ctrl + E</td>
+<td>最近打开文档</td>
+</tr>
+<tr>
+<td>Ctrl + Q</td>
+<td>显示注释文档</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + Up/Down</td>
+<td>移动代码</td>
+</tr>
+<tr>
+<td>Ctrl + W</td>
+<td>旋转代码</td>
+</tr>
+<tr>
+<td>Ctrl + [/]</td>
+<td>跳到括号开头结尾</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + T</td>
+<td>将代码加入如try/catch语句中</td>
+</tr>
+<tr>
+<td>Ctrl + O</td>
+<td>选择可以重写的方法</td>
+</tr>
+</tbody>
+</table>
+
+            
+            
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        <div class="post-footer-tags">
+            <span class="text-color-light text-small">标签</span><br/>
+            
+    <a class="tag tag--primary tag--small t-link" href="/tags/马上学Android/">马上学Android</a>
+
+        </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/04/02/030-Android-Tutorial-022/"
+                   data-tooltip="022 - 使用Bundle在不同Activity之间传值">
+                    
+                        <i class="fa fa-angle-left"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/03/31/028-Android-Tutorial-020/"
+                   data-tooltip="020 - Android Studio的使用教程01">
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至新浪微博"
+               href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=2071225&amp;url=http://chenqichao.me/2014/04/01/029-Android-Tutorial-021/&amp;title=021 - Android Studio的使用教程02">
+                <i class="fa fa-weibo"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-029-Android-Tutorial-021" data-title="021 - Android Studio的使用教程02" data-url="http://chenqichao.me/2014/04/01/029-Android-Tutorial-021/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:'tutorchen'};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</section>
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 陈启超. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/04/02/030-Android-Tutorial-022/"
+                   data-tooltip="022 - 使用Bundle在不同Activity之间传值">
+                    
+                        <i class="fa fa-angle-left"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/03/31/028-Android-Tutorial-020/"
+                   data-tooltip="020 - Android Studio的使用教程01">
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至新浪微博"
+               href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=2071225&amp;url=http://chenqichao.me/2014/04/01/029-Android-Tutorial-021/&amp;title=021 - Android Studio的使用教程02">
+                <i class="fa fa-weibo"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://chenqichao.me/2014/04/01/029-Android-Tutorial-021/">
+                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://chenqichao.me/2014/04/01/029-Android-Tutorial-021/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://chenqichao.me/2014/04/01/029-Android-Tutorial-021/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <!-- Define author's picture -->
+
+
+
+
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+        <img id="about-card-picture" src="http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+        
+        <h4 id="about-card-name">陈启超</h4>
+        
+        <h5 id="about-card-bio"><p>Android研发工程师@美团</p>
+</h5>
+
+        <p id="about-card-bio"><p>你为什么而活着?</p>
+</p>
+        
+        
+        <h5 id="about-card-job">
+            <i class="fa fa-briefcase"></i>
+            <br/>
+            <p>研发工程师|程序猿</p>
+
+        </h5>
+        
+        
+        <h5 id="about-card-location">
+            <i class="fa fa-map-marker"></i>
+            <br/>
+            中国·厦门
+        </h5>
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('http://7mnllc.com1.z0.glb.clouddn.com/bg.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/jquery.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.fancybox.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
+<script src="/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>

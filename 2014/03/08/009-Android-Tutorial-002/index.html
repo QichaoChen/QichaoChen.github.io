@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+<html lang="null">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="陈启超的博客">
+    <title>[马上学Android] 002 - Android开发环境的配置02 - 陈启超的博客</title>
+    <meta name="author" content="陈启超">
+    
+        <link rel="icon" href="/assets/images/android.ico">
+    
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="开放环境配置">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="[马上学Android] 002 - Android开发环境的配置02">
+<meta property="og:url" content="http://chenqichao.me/2014/03/08/009-Android-Tutorial-002/index.html">
+<meta property="og:site_name" content="陈启超的博客">
+<meta property="og:description" content="开放环境配置">
+<meta property="og:image" content="http://tutorchen.qiniudn.com/JDK-Downloads.png">
+<meta property="og:image" content="http://tutorchen.qiniudn.com/cmd.png">
+<meta property="og:image" content="http://tutorchen.qiniudn.com/Android-Studio-01.png">
+<meta property="og:image" content="http://tutorchen.qiniudn.com/Android-Studio-02.png">
+<meta property="og:image" content="http://tutorchen.qiniudn.com/Android-Studio-03.png">
+<meta property="og:image" content="http://tutorchen.qiniudn.com/Android-Studio-04.png">
+<meta property="og:image" content="http://tutorchen.qiniudn.com/Android-Studio-05.png">
+<meta property="og:image" content="http://tutorchen.qiniudn.com/Android-Studio-06.png">
+<meta property="og:image" content="http://tutorchen.qiniudn.com/Android-Studio-07.png">
+<meta property="og:updated_time" content="2015-11-18T15:30:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[马上学Android] 002 - Android开发环境的配置02">
+<meta name="twitter:description" content="开放环境配置">
+    
+    
+    
+        <meta property="og:image" content="/assets/images/http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+    
+    
+        <meta property="og:image" content="/2014/03/08/009-Android-Tutorial-002/http://7mnllc.com1.z0.glb.clouddn.com/Android_Tutorial_Logo"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://chenqichao.me/2014/03/08/009-Android-Tutorial-002/http://7mnllc.com1.z0.glb.clouddn.com/Android_Tutorial_Logo" />
+    
+    
+        <meta property="og:image" content="/2014/03/08/009-Android-Tutorial-002/http://7mnllc.com1.z0.glb.clouddn.com/android-nombres-postres.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://chenqichao.me/2014/03/08/009-Android-Tutorial-002/http://7mnllc.com1.z0.glb.clouddn.com/android-nombres-postres.jpg" />
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css" type="text/css">
+    <!--STYLES END-->
+    
+    
+<script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?cff60daff4add965b50f83b38df090d3";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">陈启超的博客</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="/#about">
+        
+        
+            <img class="header-picture" src="http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+            </a>
+            <span class="sidebar-profile-name">陈启超</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">首页</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">标签</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">搜索</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">关于</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="http://weibo.com/chenqichao2016" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-weibo"></i>
+                    <span class="sidebar-button-desc">微博</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/qichaochen" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="mailto:2009chenqc@163.com" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
+                    <span class="sidebar-button-desc">邮箱</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+        <div class="post-header-cover
+                    text-center
+                    "
+             style="background-image:url('http://7mnllc.com1.z0.glb.clouddn.com/android-nombres-postres.jpg');"
+             data-behavior="3">
+            
+        </div>
+
+            <div id="main" data-behavior="3"
+                 class="hasCover
+                        hasCoverMetaOut
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+    <div class="post-header main-content-wrap text-center">
+    
+        <h1 class="post-title" itemprop="headline">
+            [马上学Android] 002 - Android开发环境的配置02
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Sat Mar 08 2014 00:00:00 GMT+0800">
+	
+		    Mar 08, 2014
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/马上学Android/">马上学Android</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>开放环境配置</p>
+<a id="more"></a>
+<p>在上一讲<a href="http://qichaochen.github.io/2014/03/08/008-Android-Tutorial-001/" target="_blank" rel="external">Android开发环境的配置01</a>中介绍了Android最新的发展情况（截止至Google 2014 I/O）,并给出了开发Android所需要的环境和工具，那么接下来实战搭配环境。</p>
+<ul>
+<li>马上学Android 002 - Android开发环境的配置02</li>
+</ul>
+<embed src="http://player.youku.com/player.php/sid/XNjg2NTE0NTQ0/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+
+<ol>
+<li>Java环境配置</li>
+</ol>
+<p>首先到Oracle官网下载<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">Java SE</a>,根据自己电脑类型和版本下载对应的<br>java JDK(点击查看大图)</p>
+<p><img src="http://tutorchen.qiniudn.com/JDK-Downloads.png" width="250" height="330"></p>
+<p>下载完成后点击进行安装，默认安装即可，安装完毕后如果是Windows用户需要配置Java的环境变量，如果你是Windows用户移步<a href="http://jingyan.baidu.com/article/925f8cb836b26ac0dde0569e.html" target="_blank" rel="external">配置Java环境的百度经验</a><br>需要确保你在命令行能识别javac命令，如果不能识别，那么就是环境变量没配置成，返回去再次配置一下(照着抄不至于抄错把！)</p>
+<p>在cmd命令行窗口输入javac<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javac</span><br></pre></td></tr></table></figure></p>
+<p>如果显示下面信息则是正常配置</p>
+<p><img src="http://tutorchen.qiniudn.com/cmd.png" width="300" height="330"></p>
+<p>如果是Mac用户的话，只需要安装对应的pkg即可，安装完毕以为这你可以进行下一步了！是不是很简单啊！</p>
+<ol>
+<li>下载安装Android Studio</li>
+</ol>
+<p>Google在去年也就2013的I/O大会上发布全新的Android开发工具IDE(Android Stduio)，进过一年多的发展虽然还是beta版本没有正式版，但是这一年多的发展Android Studio已经足够强大，虽然它的入门门槛相比较基于Eclipse的ADT来的高，但是基于Intellij IDEA的Android Studio依然是日后Google主推的Android开发工具（啊！！！什么是Intellij IDEA？后面的视频教程会专门提到！慢慢来~),Android Studio的下载和安装也基本是一键安装了，省去以前ADT的各种配置，Google真是业界良心的公司啊！</p>
+<ul>
+<li>首先下载<a href="https://developer.android.com/sdk/installing/studio.html" target="_blank" rel="external">Android Studio</a></li>
+</ul>
+<p>根据自己电脑的版本和类型选择不同版本进行下载，下载完毕后进行正常安装即可！</p>
+<pre><code>友情提醒！不要轻易升级<span class="keyword">Android </span>Studio鉴于本人几次因为犯了升级控的病之后升级了IDE，
+结果天朝的和谐网络你懂的，导致升级后某些组件无法正常下载来适配当前的版本。
+</code></pre><p>如下载并安装成功了之后就可以进行创建第一个App了，下面给出最新版IDE的新建工程步骤截图</p>
+<p><img src="http://tutorchen.qiniudn.com/Android-Studio-01.png" width="250" height="230"></p>
+<p><img src="http://tutorchen.qiniudn.com/Android-Studio-02.png" width="250" height="230"></p>
+<p><img src="http://tutorchen.qiniudn.com/Android-Studio-03.png" width="250" height="230"></p>
+<p><img src="http://tutorchen.qiniudn.com/Android-Studio-04.png" width="250" height="230"></p>
+<p><img src="http://tutorchen.qiniudn.com/Android-Studio-05.png" width="250" height="230"></p>
+<p>点击Finish之后，创建完了工程，有一个”鬼门关”要闯，那就是Gradle的下载，由于Android Studio是基于Gradle进行App的构建，且没有内置Gradle组件，必须通过网络下载，可是下载过程如果运气好，很快就可以下载完毕，如果运气不好那么呵呵，前面的准备都白做了，没有运行！如果下载不到gradle，怎么办呢？后面的会介绍“如何离线配置Gradle”（再次吐槽一下天朝的网络，希望你顺利的Gradle的下载，起步阶段不气馁啊）接下来如何将没有添加过一行代码的App部署手机或者模拟器呢，接着往下看。</p>
+<p><img src="http://tutorchen.qiniudn.com/Android-Studio-06.png" width="250" height="230"></p>
+<p>在模拟器运行结果如下图：</p>
+<p><img src="http://tutorchen.qiniudn.com/Android-Studio-07.png" width="250" height="230"></p>
+<p>如果你有手机（没有？作为一名想成为Android开发者的你怎么能没有？？？），那么只需要你按照能正常被电脑识别，如果不行就先连上某些手机管家，自动帮你下载USB驱动，完了关闭管家类软件，不然有可能ADB被占用，然后点击运行按钮部署到手机。</p>
+<p>经过了上面不算复杂，但却需要你花点时间配置后，以后你就可以安心的学习Android开发了，你还在等什么开始配置你自己的开发环境吧！</p>
+
+            
+            
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        <div class="post-footer-tags">
+            <span class="text-color-light text-small">标签</span><br/>
+            
+    <a class="tag tag--primary tag--small t-link" href="/tags/马上学Android/">马上学Android</a>
+
+        </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/03/09/010-Android-Tutorial-003/"
+                   data-tooltip="[马上学Android] 003 - Android Studio工程目录初步了解">
+                    
+                        <i class="fa fa-angle-left"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/03/08/008-Android-Tutorial-001/"
+                   data-tooltip="Android开发环境的配置01">
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至新浪微博"
+               href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=2071225&amp;url=http://chenqichao.me/2014/03/08/009-Android-Tutorial-002/&amp;title=[马上学Android] 002 - Android开发环境的配置02">
+                <i class="fa fa-weibo"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-009-Android-Tutorial-002" data-title="[马上学Android] 002 - Android开发环境的配置02" data-url="http://chenqichao.me/2014/03/08/009-Android-Tutorial-002/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:'tutorchen'};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</section>
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 陈启超. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/03/09/010-Android-Tutorial-003/"
+                   data-tooltip="[马上学Android] 003 - Android Studio工程目录初步了解">
+                    
+                        <i class="fa fa-angle-left"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2014/03/08/008-Android-Tutorial-001/"
+                   data-tooltip="Android开发环境的配置01">
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至新浪微博"
+               href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=2071225&amp;url=http://chenqichao.me/2014/03/08/009-Android-Tutorial-002/&amp;title=[马上学Android] 002 - Android开发环境的配置02">
+                <i class="fa fa-weibo"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://chenqichao.me/2014/03/08/009-Android-Tutorial-002/">
+                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://chenqichao.me/2014/03/08/009-Android-Tutorial-002/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://chenqichao.me/2014/03/08/009-Android-Tutorial-002/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <!-- Define author's picture -->
+
+
+
+
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+        <img id="about-card-picture" src="http://7mnllc.com1.z0.glb.clouddn.com/myheadlogo.jpg"/>
+        
+        <h4 id="about-card-name">陈启超</h4>
+        
+        <h5 id="about-card-bio"><p>Android研发工程师@美团</p>
+</h5>
+
+        <p id="about-card-bio"><p>你为什么而活着?</p>
+</p>
+        
+        
+        <h5 id="about-card-job">
+            <i class="fa fa-briefcase"></i>
+            <br/>
+            <p>研发工程师|程序猿</p>
+
+        </h5>
+        
+        
+        <h5 id="about-card-location">
+            <i class="fa fa-map-marker"></i>
+            <br/>
+            中国·厦门
+        </h5>
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('http://7mnllc.com1.z0.glb.clouddn.com/bg.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/jquery.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.fancybox.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
+<script src="/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>
